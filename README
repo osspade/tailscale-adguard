@@ -1,0 +1,14 @@
+#Description
+Adds tailscale using evironment variable
+env $TSKEY
+
+#TEST
+docker run --name adguard $(docker build  -t osspade/tailscale-adguard:latest --load --no-cache -q .)
+
+#SSH
+docker exec -it adguard sh
+
+#Deploy
+docker push osspade/tailscale-adguard:latest
+
+
